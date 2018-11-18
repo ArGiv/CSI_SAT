@@ -1,0 +1,23 @@
+t = 3; %number of attributes
+k = 3; %maximum size of support set
+n = 5; %number of positive instances
+m = 3; %number of negative instances
+c = 4; %number of atMostOne Constraints
+
+omegap=[| 1,1,0|
+1,0,1|
+0,0,1|
+0,1,0|
+0,0,0
+|];
+
+omegan=[| 1,1,1|
+1,1,1|
+1,0,0
+|];
+
+atMostOne =
+[{1,2},
+{3},
+{2,3},
+{1}];
