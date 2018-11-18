@@ -1,4 +1,5 @@
 import uuid
+import os
 import random
 # 
 print('Generates values for the Constrained Minimal Support Set problem\nand writes them into a MiniZinc .dzn file\n')
@@ -65,7 +66,13 @@ for i in range(c):
     constraints.append(constr)
 
 id = (str(uuid.uuid4())[:8])
-f = open('data_' + id + '.dzn', 'w')
+
+current_directory = os.getcwd()
+final_directory = os.path.join(current_directory, r'data/')
+if not os.path.exists(final_directory):
+   os.makedirs(final_directory)
+print(final_directory)
+f = open(final_directory + 'data_' + id + '.dzn', 'w')
 
 # write variable declarations to file
 f.write("""t = """ + str(t) + """; %number of attributes
